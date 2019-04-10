@@ -4,10 +4,9 @@
  */
 
 /**
- * \file
- *         @brief       Implementation of hardware independent NVM device interface.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * \file  nvm.c
+ * \brief Implementation of the hardware independent NVM device interface.
+ * \author  Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 // Implements following header(s)

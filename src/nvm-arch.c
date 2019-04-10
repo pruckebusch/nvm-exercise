@@ -4,10 +4,9 @@
  */
 
 /**
- * \file
- *         @brief       Implementation of architecture specific NVM device interface.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * \file  nvm-arch.c
+ * \brief Implementation of the architecture specific NVM device interface.
+ * \author  Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 // Implements following header(s)

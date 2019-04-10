@@ -4,7 +4,7 @@ digraph "src/gp-nvm.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node3 [label="src/gp-nvm.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="src/gp-nvm.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gp-nvm_8c.html"];
+  Node4 [label="src/gp-nvm.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gp-nvm_8c.html",tooltip="Implementation of general purpose NVM library. "];
   Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="tests/test-gp-nvm.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test-gp-nvm_8c.html",tooltip="Example using the General purpose NVM library.. "];
 }

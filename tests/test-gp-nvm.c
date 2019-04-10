@@ -20,11 +20,9 @@
  */
 
 /**
- * \file
- *         @brief       Example using the \ref gp-nvm-lib.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
- * 
+ * \file  test-gp-nvm.c
+ * \brief Example using the \ref gp-nvm-lib.
+ * \author  Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 #include <stdio.h>

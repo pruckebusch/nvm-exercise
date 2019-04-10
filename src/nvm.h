@@ -12,10 +12,9 @@
  */
 
 /**
- * \file
- *         @brief       Header file for the hardware independent NVM device interface.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * \file  nvm.h
+ * \brief Header file for the hardware independent NVM device interface.
+ * \author  Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 #ifndef __NVM_H__

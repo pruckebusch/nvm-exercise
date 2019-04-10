@@ -20,10 +20,9 @@
  */
 
 /**
- * \file
- *         @brief       Header file for the general purpose NVM library.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * \file 	gp-nvm.h
+ * \brief	Header file for the general purpose NVM library.
+ * \author	Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 #ifndef __GP_NVM_H__

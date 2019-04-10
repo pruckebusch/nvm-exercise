@@ -4,10 +4,9 @@
  */
 
 /**
- * \file
- *         @brief       Implementation of general purpose NVM library.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * \file 	gp-nvm.c
+ * \brief	Implementation of general purpose NVM library.
+ * \author	Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 // Implements following header(s)

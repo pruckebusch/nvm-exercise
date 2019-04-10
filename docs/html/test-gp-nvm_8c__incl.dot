@@ -14,7 +14,7 @@ digraph "tests/test-gp-nvm.c"
   Node0 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="gp-nvm.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gp-nvm_8h.html"];
+  Node6 [label="gp-nvm.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gp-nvm_8h.html",tooltip="Header file for the general purpose NVM library. "];
   Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];

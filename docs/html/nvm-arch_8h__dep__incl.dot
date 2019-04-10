@@ -4,7 +4,7 @@ digraph "src/nvm-arch.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node3 [label="src/nvm-arch.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="src/nvm-arch.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$nvm-arch_8c.html"];
+  Node4 [label="src/nvm-arch.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$nvm-arch_8c.html",tooltip="Implementation of the architecture specific NVM device interface. "];
   Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="src/nvm.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$nvm_8c.html"];
+  Node5 [label="src/nvm.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$nvm_8c.html",tooltip="Implementation of the hardware independent NVM device interface. "];
 }

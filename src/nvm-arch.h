@@ -12,10 +12,9 @@
  */
 
 /**
- * \file
- *         @brief       Header file for the architecture specific NVM device interface.
- * \author
- *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * \file  nvm-arch.h
+ * \brief Header file for the architecture specific NVM device interface.
+ * \author  Peter Ruckebusch <peter.ruckebusch@gmail.com>
  */
 
 #ifndef __NVM_ARCH_H__
