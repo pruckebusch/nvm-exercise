@@ -1,3 +1,32 @@
+/**
+ * 	\addtogroup nvm-exercise
+ * @{
+ */
+
+/**
+ * \defgroup gp-nvm-test Test example for general purpose NVM library.
+ * @{
+ *
+ * Example code using the \ref gp-nvm-lib 
+ * 
+ * The example adds attributes with different datatypes and sizes.
+ * There are four integer type attributes, four arrays with different integer types and one struct.
+ * The example randomly picks an attribute each iteration for NUM_ITERATIONS.
+ * The value of the attribute is read, updated and read again.  
+ * The first read can fail if the attribute was not present in nvm.bin.
+ * The example fails if there is no nvm.bin file in this directory.
+ * 
+ *
+ */
+
+/**
+ * \file
+ *         @brief       Example using the \ref gp-nvm-lib.
+ * \author
+ *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ * 
+ */
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -96,3 +125,7 @@ int main () {
 	}
 	return 0;
 }
+
+
+/** @} */
+/** @} */

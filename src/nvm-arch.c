@@ -1,9 +1,32 @@
+/**
+ * \addtogroup nvm-arch
+ * @{
+ */
+
+/**
+ * \file
+ *         @brief       Implementation of architecture specific NVM device interface.
+ * \author
+ *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ */
+
 // Implements following header(s)
 #include "nvm-arch.h"
 
 // Uses following header(s)
 #include <stdio.h>
 
+/**
+ * @brief      This operation checks if the value that was written is correct after the write operation.
+ *
+ * @param[in]  offset  The offset in the NVM were the attribute was written.
+ * @param[in]  len     The length of the attribute (number of bytes).
+ * @param[in]  ptr_in  The pointer were the value was copied from.
+ * @param[in]  nvm     Pointer to the nvm FILE
+ *
+ * @return     0: SUCCESS
+ * @return     1: ERROR
+ */
 int
 _nvm_arch_check_write_operation(long int offset,
                                 size_t len,
@@ -33,6 +56,16 @@ _nvm_arch_check_write_operation(long int offset,
   return 0;
 }
 
+/**
+ * @brief      Copy len bytes into pointer from NVM starting at offset.
+ *
+ * @param[in]  offset  The offset in the NVM were the read operation should start.
+ * @param[in]  len     The length of the read operation (number of bytes).
+ * @param[out] ptr     The pointer to which len bytes should be copied.
+ *
+ * @return     0: SUCCESS
+ * @return     1: ERROR
+ */
 int
 nvm_arch_read(long int offset,
               size_t len,
@@ -67,6 +100,16 @@ nvm_arch_read(long int offset,
   return 0;
 }
 
+/**
+ * @brief      Update NVM by copying len bytes read from pointer to NVM starting at offset.
+ *
+ * @param[in]  offset  The offset in the NVM were the update operation should start.
+ * @param[in]  len     The length of the update operation (number of bytes).
+ * @param[out] ptr     The pointer from which len bytes should be copied.
+ *
+ * @return     0: SUCCESS
+ * @return     1: ERROR
+ */
 int
 nvm_arch_update(long int offset,
                 size_t len,
@@ -108,6 +151,16 @@ nvm_arch_update(long int offset,
   return 0;
 }
 
+/**
+ * @brief      Append to NVM by copying len bytes read from pointer to NVM starting at offset.
+ *
+ * @param[in]  offset  The offset in the NVM were the append operation should start.
+ * @param[in]  len     The length of the append operation (number of bytes).
+ * @param[out] ptr     The pointer from which len bytes should be copied.
+ *
+ * @return     0: SUCCESS
+ * @return     1: ERROR
+ */
 int
 nvm_arch_append(long int offset,
                 size_t len,
@@ -140,3 +193,5 @@ nvm_arch_append(long int offset,
   fclose(nvm);
   return 0;
 }
+
+/** @} */

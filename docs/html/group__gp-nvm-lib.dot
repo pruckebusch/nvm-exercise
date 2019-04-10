@@ -1,0 +1,9 @@
+digraph "General purpose NVM library."
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node0 [label="General purpose NVM\l library.",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="NVM exercise.",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__nvm-exercise.html",tooltip="The exercise demonstrates how a general purpose NVM library can be build on embedded platforms..."];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+}

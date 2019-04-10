@@ -1,3 +1,15 @@
+/**
+ * \addtogroup gp-nvm-lib
+ * @{
+ */
+
+/**
+ * \file
+ *         @brief       Implementation of general purpose NVM library.
+ * \author
+ *         Peter Ruckebusch <peter.ruckebusch@gmail.com>
+ */
+
 // Implements following header(s)
 #include "gp-nvm.h"
 
@@ -6,23 +18,46 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * @brief      Maximum number of attributes in the NVM.
+ * 
+ */
 #define MAX_ATTRS 10
 
+/**
+ * @brief      Attribute list entry.
+ * 
+ * This structure consists of the attribute identifier, length and offset in NVM.
+ */
 typedef struct attr_list_entry {
 	gp_nvm_attr_id_t attr_id;
 	uint8_t len;
 	uint32_t offset;
 } attr_list_entry_t;
 
+/**
+ * @brief      Attribute list.
+ * 
+ * This structure contains the number of entries, the total size and an array of entries.
+ */
 typedef struct attr_list {
 	uint8_t num_entries;
 	uint32_t total_size;
 	attr_list_entry_t entries[MAX_ATTRS];
 } attr_list_t;
 
-// Attribute list is also maintained in RAM memory for fast look-up
+/**
+ * @brief      Attribute list declaration.
+ * 
+ * The attribute list is also maintained in RAM memory for fast look-up.
+ * Every change is synced on the NVM.
+ * 
+ */
 attr_list_t attrs;
 
+/**
+ * @brief      This function initializes the general purpose non-volatile memory library.
+ */
 void
 gp_nvm_init()
 {
@@ -40,6 +75,14 @@ gp_nvm_init()
 	}
 }
 
+/**
+ * @brief      Allows to search for an entry in the attribute list based on the attribute ID.
+ *
+ * @param[in]  attr_id  The att.ribute identifier
+ *
+ * @return     NULL: No entry was found.
+ * @return     attr_list_entry_t*: Pointer to the entry in the attribute list.
+ */
 attr_list_entry_t*
 _gp_nvm_get_attr_list_entry(gp_nvm_attr_id_t attr_id)
 {
@@ -54,6 +97,20 @@ _gp_nvm_get_attr_list_entry(gp_nvm_attr_id_t attr_id)
 	return attr;
 }
 
+/**
+ * @brief      Get an attribute based on attribute ID.
+ * 
+ * This function searches for the attribute in NVM.
+ * If found, it copies both the length and value into the respective pointers provides as parameters.
+ *
+ * @param[in]  attr_id   The attribute identifier
+ * @param[out] p_length  Pointer were the length can be stored.
+ * @param[out] p_value   Pointer were the value can be stored.
+ *
+ * @return     0: GP_NVM_SUCCESS
+ * @return     2: GP_NVM_ATTR_NOT_FOUND
+ * @return     5: GP_NVM_MEM_ERROR
+ */
 gp_nvm_result_t
 gp_nvm_get_attribute(	gp_nvm_attr_id_t attr_id,
 						uint8_t* p_length,
@@ -75,9 +132,25 @@ gp_nvm_get_attribute(	gp_nvm_attr_id_t attr_id,
 	return GP_NVM_SUCCESS;
 }
 
+/**
+ * @brief      Set an attribute based on the attribute ID.
+ * 
+ * This function tries to update an attribute on the NVM.
+ * If found, it checks if the lenght is correct and copies the value retrieved from the p_value pointer.
+ * If not found, it will append the attribute to the list and update the attribute list structure.
+ *
+ * @param[in]  attr_id  The attribute identifier
+ * @param[in]  length   The length of the attribute
+ * @param[in]  p_value  Pointer to the value in RAM.
+ *
+ * @return     0: GP_NVM_SUCCESS
+ * @return     3: GP_NVM_ATTR_LEN_DIFF
+ * @return     4: GP_NVM_MEM_FULL
+ * @return     5: GP_NVM_MEM_ERROR
+ */
 gp_nvm_result_t
 gp_nvm_set_attribute(	gp_nvm_attr_id_t attr_id,
-						uint8_t length, 
+						uint8_t length,
 						uint8_t* p_value)
 {
 	// lookup attr_id in attrs list
@@ -113,6 +186,9 @@ gp_nvm_set_attribute(	gp_nvm_attr_id_t attr_id,
 	}
 
 	// check if the lengths match (var length arrays are not possible)
+	/**
+	* \todo Enable variable length arrays.
+	*/
 	if( attr->len != length ){
 		return GP_NVM_ATTR_LEN_DIFF;
 	}
@@ -129,3 +205,5 @@ gp_nvm_set_attribute(	gp_nvm_attr_id_t attr_id,
 // option a) include max_length when setting attribute so enough mem can be allocated
 // option b) move attr with higher offset backward/forward in NVM when length differs
 // 			also update offsets in attr_list with int offset_diff = new_len - old_len 
+
+/** @} */
